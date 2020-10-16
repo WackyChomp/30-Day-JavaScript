@@ -22,4 +22,5 @@ section{
     width: 20px;            /*change size with width and height*/
     height: 20px;
     border-radius: 50px;
+    transform: translate(-50%, -50%)    /*tip of mouse is inside cursor*/
 }
