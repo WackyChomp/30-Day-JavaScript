@@ -5,6 +5,10 @@
     cursor: none;     /*hides default mouse cursor*/
 }
 
+body{
+    overflow-x: hidden;        /*removes the horizontal scroll bar*/
+}
+
 section{
     min-height: 100vh;
     background-color: rgb(41, 42, 46);
@@ -30,7 +34,7 @@ section{
 .cursor::after , .cursor::before{
     content: '';
     position: absolute;
-    width: 5px;
+    width: 5px;            /*manipulate the size of cursor with width and height*/
     height: 5px;
     left: 50%;
     top: 50%;

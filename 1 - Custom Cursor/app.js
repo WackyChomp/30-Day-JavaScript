@@ -10,16 +10,16 @@ window.addEventListener('mousemove', (e)=>{
 
 /*Cursor following the mouse when scrolling */
 window.addEventListener('scroll', ()=>{
-    const fromTop = parseInt(cursor.getAttribute('data-fromTop'));     /*takes value from setAttribute above*/
-    cursor.style.top = scrollY + 'px';
+    const fromTop = cursor.getAttribute('data-fromTop');     /*takes value from setAttribute above*/
+    cursor.style.top = scrollY + parseInt(fromTop) + 'px';
     /*console.log(scrollY);         see the value of scroll  */
 });
 
 /*Calls the click from style.css */
 windows.addEventListener('click', ()=>{
-    if(cursor.classList.contains('active')){
-        cursor.classList.remove('click');    /*Triggers a DOM reflow */
-        void cursor.offsetWidth;
+    if(cursor.classList.contains('click')){
+        cursor.classList.remove('click');
+        void cursor.offsetWidth;     /*Triggers a DOM reflow */
         cursor.classList.add('click')
     }
     else{
