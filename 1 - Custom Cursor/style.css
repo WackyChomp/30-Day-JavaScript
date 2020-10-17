@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: none;     /*hides default mouse cursor*/
 }
 
 section{
@@ -18,11 +19,12 @@ section{
     position: absolute;
     left: 0;
     top: 0;
-    border: 2px solid white;
+    border: 2px solid white;     /*comment this line out to remove circle border*/
     width: 20px;            /*change size with width and height*/
     height: 20px;
     border-radius: 50px;
-    transform: translate(-50%, -50%)    /*tip of mouse is inside cursor*/
+    transform: translate(-50%, -50%);    /*tip of mouse is inside cursor*/
+    pointer-events: none;      /*ability to highlight individually*/
 }
 
 .cursor::after , .cursor::before{
@@ -39,11 +41,11 @@ section{
 
 .cursor::before{         /*color inside the cursor*/
     background-color: blue;
-    transform: translate(-50%, -50%) scale(3);
+    /*transform: translate(-50%, -50%) scale(3);    makes color persist if uncommented */
 }
 
 .cursor.click::before{
-    animation: 1s ease-in-out forwards;
+    animation: click 1s ease-in-out forwards;
 }
 
 @keyframes click{

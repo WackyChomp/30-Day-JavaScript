@@ -13,4 +13,16 @@ window.addEventListener('scroll', ()=>{
     const fromTop = parseInt(cursor.getAttribute('data-fromTop'));     /*takes value from setAttribute above*/
     cursor.style.top = scrollY + 'px';
     /*console.log(scrollY);         see the value of scroll  */
-})
+});
+
+/*Calls the click from style.css */
+windows.addEventListener('click', ()=>{
+    if(cursor.classList.contains('active')){
+        cursor.classList.remove('click');    /*Triggers a DOM reflow */
+        void cursor.offsetWidth;
+        cursor.classList.add('click')
+    }
+    else{
+        cursor.classList.add('click')
+    }
+});
