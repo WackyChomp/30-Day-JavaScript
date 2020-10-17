@@ -8,7 +8,7 @@ window.addEventListener('mousemove', (e)=>{
     cursor.setAttribute('data-fromTop', (cursor.offsetTop - scrollY))
 });
 
-/*Cursor following the mouse */
+/*Cursor following the mouse when scrolling */
 window.addEventListener('scroll', ()=>{
     const fromTop = parseInt(cursor.getAttribute('data-fromTop'));     /*takes value from setAttribute above*/
     cursor.style.top = scrollY + 'px';

@@ -24,3 +24,15 @@ section{
     border-radius: 50px;
     transform: translate(-50%, -50%)    /*tip of mouse is inside cursor*/
 }
+
+.cursor::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50px;
+}
