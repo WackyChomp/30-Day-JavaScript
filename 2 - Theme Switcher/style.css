@@ -11,6 +11,7 @@ body[data-theme = "light"]{
     --color-3: rgb(200, 200, 200);
     --color-4: rgb(80, 82, 110);
 }
+/*End Colors for light theme*/
 
 /*Colors for dark theme*/
 body[data-theme = "dark"]{
@@ -19,6 +20,7 @@ body[data-theme = "dark"]{
     --color-3: rgb(39, 40, 42);
     --color-4: rgb(186, 186, 202);
 }
+/*End Colors for dark theme*/
 
 body{
     font-family: 'Roboto';       /*Not working. I need to install something*/
@@ -82,7 +84,8 @@ input{
     visibility: hidden;
 }
 
-label{
+label{            /*The oval shape of the theme switcher*/
+    cursor: pointer;
     display: block;
     text-indent: -9999px;
     height: 30px;
@@ -90,9 +93,10 @@ label{
     background-color: aliceblue;
     border-radius: 50px;
     position: relative;
+    transition: .5s ease background-color;
 }
 
-label::after{
+label::after{           /*The ball inside the theme switcher*/
     position: absolute;
     content: '';
     width: 20px;
@@ -102,6 +106,17 @@ label::after{
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
+    transition: .5s ease;
+}
+
+input:checked + label{
+    background-color: rgb(25, 26, 37);
+    border: 2px solid whitesmoke;
+}
+
+input:checked + label::after{
+    background-color: aliceblue;
+    left: calc(100% - 25px);      /*100% by itself goes outside of the button*/
 }
 
 /*End Theme Switcher Button*/
