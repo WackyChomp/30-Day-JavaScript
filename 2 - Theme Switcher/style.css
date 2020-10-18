@@ -68,3 +68,40 @@ button{
     margin-top: 20px;
     cursor:pointer;
 }
+
+/*Theme Switcher Button*/
+.theme-switcher{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label{
+    display: block;
+    text-indent: -9999px;
+    height: 30px;
+    width: 60px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    position: relative;
+}
+
+label::after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: rgb(19,16,31);
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
+/*End Theme Switcher Button*/
