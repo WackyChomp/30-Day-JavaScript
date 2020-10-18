@@ -37,9 +37,22 @@ section{
     flex-direction: column;    /*removing this makes the button appear on the right side*/
 }
 
-.container p {
+.container p{
     font-size: 2rem;
     font-weight: 300;
     line-height: 3rem;
     text-align: justify;
+}
+
+button{
+    margin-top: 4rem;
+    width: fit-content;
+    padding: 2rem;
+    font-size: 2rem;
+    background-color: rgb(25, 28, 29);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;        /*button goes to the right side*/
 }
