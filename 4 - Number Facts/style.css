@@ -1,0 +1,39 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+}
+
+body{
+    background-color: rgb(28, 27, 34);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    width: 100%;
+}
+
+.container{
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: magenta;
+}
+
+form{
+    width: 100%;
+    background-color: rgb(42, 41, 42);
+    padding: 20px;
+    border-radius: 0px;
+}
