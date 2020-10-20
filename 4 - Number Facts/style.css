@@ -28,10 +28,10 @@ section{
     width: 90%;
     max-width: 450px;
     margin: 0 auto;
-    background-color: magenta;
+    background-color: magenta;        /*commenting this out is optional*/
 }
 
-form{
+form, .number-fact{
     width: 100%;
     background-color: rgb(42, 41, 42);
     padding: 20px;
@@ -68,4 +68,10 @@ button{
     margin-left: 10px;
     cursor: pointer;
     color: green;         /*aliceblue*/
+}
+
+.number-fact{
+    margin-top: 10px;
+    height: auto;
+    font-size: 20px;
 }
