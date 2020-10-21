@@ -1,7 +1,8 @@
 const timeHeader = document.querySelector('h1');
-let timeSecond = 5;
+let timeSecond = 80;
 
-timeHeader.innerHTML = `00:${timeSecond}`;    //not ' ' it's ` `
+displayTime(timeSecond)      //this prevents the actual number from timeSecond from appearing
+//timeHeader.innerHTML = `00:${timeSecond}`;    //not ' ' it's ` `
 
 const countDown = setInterval ( ()=> {
     timeSecond--;
@@ -12,7 +13,7 @@ const countDown = setInterval ( ()=> {
 }, 1000)
 
 function displayTime(second){
-    const min = second / 60;
-    const sec = second % 60;
-    timeHeader.innerHTML = `${min}:${sec}`
+    const min = Math.floor(second / 60);        //Math.floor removes decimals
+    const sec = Math.floor(second % 60);
+    timeHeader.innerHTML = `${min < 10 ? '0': ''}${min}:${sec < 10 ? '0': ''}${sec}`
 }
