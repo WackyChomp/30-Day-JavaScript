@@ -123,3 +123,28 @@ section{
 
 }
 /*End Right Card*/
+
+/*Media for Desktop*/
+@media only screen and (min-width: 700px){
+    .container .main{
+        flex-direction: row;      /*the cards on the right are moved to the right on desktop*/
+    }
+
+    .container .left{
+        flex: .7;
+        display: grid;            /*left cards displayed in grid format*/
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .container .car{
+        margin: 0;              /*create gaps between grid*/
+    }
+
+    .container .right{
+        flex: .3;
+    }
+}
+
+
+/*End Media for Desktop*/
