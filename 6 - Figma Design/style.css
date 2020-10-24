@@ -53,6 +53,7 @@ section{
     padding: 40px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    transition: .3s ease in-out background-color;    /*clicking the card highlights it*/
 }
 
 .left .card ion-icon{
@@ -61,4 +62,26 @@ section{
     border-radius: 50%;
     font-size: 25px;
     color: white;
+}
+
+.left .card h2{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--color-1);
+    margin: 10px 0;
+}
+
+.left .card p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.left .card:hover{
+    background-color: var(--color-3);
+}
+
+.left .card:hover ion-icon{
+    background-color: var(--color-2);
+    color: var(--color-1);
 }
