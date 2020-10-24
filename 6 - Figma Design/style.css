@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    --color-1: #2F3144;
+    --color-2: white;
+    --color-3: #FFBC00;
+    --color-4: #DA8F00;
+    --color-5: #E7E8EC;
+}
+
+html{
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+}
+
+section{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    padding: 100px 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.container .head h1{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--color-1);
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+.container .main{
+    display: flex;
+    flex-direction: column;
+}
+
+.left .card{
+    width: 100%;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.left .card ion-icon{
+    padding: 15px;
+    background-color: var(--color-3);
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+}
