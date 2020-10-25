@@ -21,3 +21,15 @@ section{
     justify-content: center;
 }
 
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.point img{       /*adjust size of image*/
+    width: 80px;
+}
