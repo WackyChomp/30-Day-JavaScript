@@ -30,6 +30,15 @@ section{
     justify-content: center;
 }
 
+.container div{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
+
 .point img{       /*adjust size of image*/
-    width: 80px;
+    width: 150px;
 }
