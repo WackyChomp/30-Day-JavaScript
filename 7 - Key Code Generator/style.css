@@ -37,6 +37,25 @@ section{
     text-align: center;
     padding: 30px;
     border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0 px #0000001c;
+    transition: .3s ease box-shadow;
+}
+
+.container div:hover{
+    box-shadow: 0px 0px 60px 0px #0000001f;
+}
+
+.container h2{
+    margin: 20px 0;
+    font-size: 60px;
+}
+
+.point{        /*remove border background of image*/
+    background-color: transparent!important;
+    padding: 0 100px!important;
+    box-shadow: none!important;
+    cursor: default!important;
 }
 
 .point img{       /*adjust size of image*/
