@@ -24,5 +24,5 @@ keyCodeDiv.addEventListener('click' , (e)=>{
     keyCodeDiv.querySelector('p').innerText = 'Copied'     /*output says copied when clicked*/
     setTimeout(()=>{        /*reverts back to original text from 'Copied'*/
         keyCodeDiv.querySelector('p').innerText = 'Click to Copy'
-    }, 2000)
+    }, 1000)
 })
