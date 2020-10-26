@@ -73,3 +73,7 @@ section{
     align-items: center;
     justify-content: center;
 }
+
+.overlay.hide{
+    display: none;
+}

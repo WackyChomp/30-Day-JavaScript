@@ -1,8 +1,10 @@
 const displayKey = document.querySelector('.key h2');
 const displayKeyCode = document.querySelector('.keyCode h2');
 const keyCodeDiv = document.querySelector('.keyCode');
+const overlay = document.querySelector('.overlay');
 
 window.addEventListener('keypress' , (e)=>{
+    overlay.classList.add('hide')
     displayKey.innerText = e.key;          /*display what key is being pressed*/
     displayKeyCode.innerText = e.keyCode;     /*keyCode is depricated*/
     if(e.keyCode === 32){                  /*makes the word "space" appear after pressing it*/
