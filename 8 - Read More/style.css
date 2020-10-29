@@ -30,3 +30,7 @@ body{
 .text.show-more .moreText{
     display: inline;
 }
+
+.text.show-more .dots{
+    display: none;
+}
