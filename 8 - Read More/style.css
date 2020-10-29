@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+body{
+    font-family: 'Roboto';
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgb(18, 23, 27);
+    color: maroon
+}
+
+.text{
+    font-size: 24px;
+}
+
