@@ -121,3 +121,34 @@ form ion-icon{
 .item:hover h3{
     bottom: 0;          /*text appear upon hover*/
 }
+
+
+/*Media Query*/
+@media only screen and (min-width: 900px){
+    .container{
+        max-width: 1160px;
+        padding: 100px;
+    }
+
+    .header{         /*shows logo on the left and image on the right*/
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header h1{          /*the logo/title is "PhotoGallery*/
+        font-size: 50px;
+    }
+
+    input{
+        font-size: 24px;
+    }
+
+    form ion-icon{
+        font-size: 24px;
+    }
+
+    .gallery{
+        grid-gap: 30px;         /*increase space between images*/
+    }
+}
+/*End Media Query*/
