@@ -38,6 +38,7 @@ section{
     box-shadow: 0px 0px 61px 7px #5e849c40;
     padding: 50px 20px;
     border-radius: 20px;     /*curves the border*/
+    text-align: center;
 }
 
 .header{
@@ -54,7 +55,7 @@ section{
 }
 
 form{
-    margin-top: 10px;
+    margin-top: 10px;              /*Adjust the space between the logo and search bar*/
     width: 80%;
     max-width: 300px;
     position: relative;
@@ -122,6 +123,18 @@ form ion-icon{
     bottom: 0;          /*text appear upon hover*/
 }
 
+.load-more{
+    display: inline-block;
+    margin-top: 30px;
+    background-color: black;
+    padding: 20px 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 15px;
+}
 
 /*Media Query*/
 @media only screen and (min-width: 900px){
