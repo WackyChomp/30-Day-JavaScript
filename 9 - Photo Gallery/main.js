@@ -2,7 +2,7 @@
 /*Object-oriented approach*/
 class PhotoGallery{
     constructor(){
-        this.API_KEY = 'THE API KEY GOES HERE';         /*single quotes */
+        this.API_KEY = 'THE API KEY GOES HERE';         /*use single quotes */
         this.galleryDiv = document.querySelector('.gallery');
         this.searchForm = document.querySelector('.header form');
         this.loadMore = document.querySelector('.load-more');
@@ -17,15 +17,20 @@ class PhotoGallery{
 
     async getImg(){
         const baseURL = `https://api.pexels.com/v1/curated?per_page=1`;      /*use backtick*/
+        const data = this.fetchImages(baseURL)
+        console.log(data)
+    }
+
+    fetchImages(baseURL){
         const response = await fetch(baseURL, {
-            method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                Authorization: this.API_KEY
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            Authorization: this.API_KEY
             }
-        })
+        });
         const data = await response.json();
-        console.log(data);
+        return data;
     }
 }
 
