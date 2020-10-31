@@ -17,11 +17,12 @@ class PhotoGallery{
 
     async getImg(){
         const baseURL = `https://api.pexels.com/v1/curated?per_page=1`;      /*use backtick*/
-        const data = this.fetchImages(baseURL)
+        const data = await this.fetchImages(baseURL)
+        this.GenerateHTML(data.photos)
         console.log(data)
     }
 
-    fetchImages(baseURL){
+    async fetchImages(baseURL){
         const response = await fetch(baseURL, {
         method: 'GET',
         headers: {
@@ -30,7 +31,22 @@ class PhotoGallery{
             }
         });
         const data = await response.json();
+        //console.log(data);
         return data;
+    }
+
+    GenerateHTML(photos){
+        photos.forEach(photo =>{
+            const item = document.createElement('div');
+            item.classList.add('item');
+            item.innerHTML = `            
+                <a href = '#'>
+                    <img src = "${photo.src.medium}">
+                    <h3> ${photo.photographer}</h3>
+                </a>
+            ` /*uses backtick*/
+
+        })
     }
 }
 
