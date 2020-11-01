@@ -16,7 +16,7 @@ class PhotoGallery{
     }
 
     async getImg(){
-        const baseURL = `https://api.pexels.com/v1/curated?per_page=1`;      /*use backtick*/
+        const baseURL = `https://api.pexels.com/v1/curated?per_page=12`;      /*use backtick*/   /*change how many appears in one page*/
         const data = await this.fetchImages(baseURL)
         this.GenerateHTML(data.photos)
         console.log(data)
@@ -31,7 +31,7 @@ class PhotoGallery{
             }
         });
         const data = await response.json();
-        //console.log(data);
+        console.log(data);
         return data;
     }
 
@@ -44,8 +44,8 @@ class PhotoGallery{
                     <img src = "${photo.src.medium}">
                     <h3> ${photo.photographer}</h3>
                 </a>
-            ` /*uses backtick*/
-
+            `; /*uses backtick*/
+            this.galleryDiv.appendChild(item)
         })
     }
 }
