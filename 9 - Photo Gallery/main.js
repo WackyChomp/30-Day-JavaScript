@@ -60,6 +60,7 @@ class PhotoGallery{
         const baseURL = await `https://api.pexels.com/v1/search?query=${searchValue}&per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
+        e.target.reset();        /*clears out the search bar after searching the input*/
     }
 }
 
