@@ -13,6 +13,10 @@ class PhotoGallery{
         document.addEventListener('DOMContentLoaded', ()=>{
             this.getImg();
         });
+
+        this.searchForm.addEventListener('submit' , (e)=>{          /*(e) is the event */
+            this.getSearchedImages(e)
+        })
     }
 
     async getImg(){
@@ -47,6 +51,15 @@ class PhotoGallery{
             `; /*uses backtick*/
             this.galleryDiv.appendChild(item)
         })
+    }
+
+    async getSearchedImages(e){
+        e.preventDefault();          /*prevent reloading after searching*/
+        this.galleryDiv.innerHTML = '';     /*clears out images on page and replace with searched images */
+        const searchValue = e.target.querySelector('input').value;
+        const baseURL = await `https://api.pexels.com/v1/search?query=${searchValue}&per_page=12`;
+        const data = await this.fetchImages(baseURL);
+        this.GenerateHTML(data.photos)
     }
 }
 
