@@ -6,21 +6,26 @@ class PhotoGallery{
         this.galleryDiv = document.querySelector('.gallery');
         this.searchForm = document.querySelector('.header form');
         this.loadMore = document.querySelector('.load-more');
+        this.pageIndex = 1;
         this.eventHandle();
     }
 
     eventHandle(){        /*when DOM content loads after the load it will grab images from API */
         document.addEventListener('DOMContentLoaded', ()=>{
-            this.getImg();
+            this.getImg(1);      /*the default page is 1*/
         });
 
         this.searchForm.addEventListener('submit' , (e)=>{          /*(e) is the event */
-            this.getSearchedImages(e)
+            this.getSearchedImages(e);
+        })
+
+        this.loadMore.addEventListener('click' , (e)=>{
+            this.loadMore(e);
         })
     }
 
-    async getImg(){
-        const baseURL = `https://api.pexels.com/v1/curated?per_page=12`;      /*use backtick*/   /*change how many appears in one page*/
+    async getImg(index){
+        const baseURL = `https://api.pexels.com/v1/curated?page=${index}&per_page=12`;      /*uses backtick*/   /*change how many appears in one page*/
         const data = await this.fetchImages(baseURL)
         this.GenerateHTML(data.photos)
         console.log(data)
@@ -57,10 +62,14 @@ class PhotoGallery{
         e.preventDefault();          /*prevent reloading after searching*/
         this.galleryDiv.innerHTML = '';     /*clears out images on page and replace with searched images */
         const searchValue = e.target.querySelector('input').value;
-        const baseURL = await `https://api.pexels.com/v1/search?query=${searchValue}&per_page=12`;
+        const baseURL = await `https://api.pexels.com/v1/search?query=${searchValue}&page=1per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
         e.target.reset();        /*clears out the search bar after searching the input*/
+    }
+
+    loadMore(e){        /*this increases the number of pages (index)*/
+        let index = ++this.pageIndex;
     }
 }
 
