@@ -7,6 +7,7 @@ class PhotoGallery{
         this.searchForm = document.querySelector('.header form');
         this.loadMore = document.querySelector('.load-more');
         this.pageIndex = 1;
+        this.searchValueGlobal = '';
         this.eventHandle();
     }
 
@@ -64,6 +65,7 @@ class PhotoGallery{
         e.preventDefault();          /*prevent reloading after searching*/
         this.galleryDiv.innerHTML = '';     /*clears out images on page and replace with searched images */
         const searchValue = e.target.querySelector('input').value;
+        this.searchValueGlobal = searchValue;       /*push the search value into a string in the constructor() at the top*/
         const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=1per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
@@ -71,7 +73,8 @@ class PhotoGallery{
     }
 
     async getMoreSearchedImages(index){
-        const searchValue = this.searchForm.querySelector('input').value;
+        //console.log(searchValue)
+        //console.log(data)
         const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=${index}per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
