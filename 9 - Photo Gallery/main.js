@@ -64,10 +64,17 @@ class PhotoGallery{
         e.preventDefault();          /*prevent reloading after searching*/
         this.galleryDiv.innerHTML = '';     /*clears out images on page and replace with searched images */
         const searchValue = e.target.querySelector('input').value;
-        const baseURL = await `https://api.pexels.com/v1/search?query=${searchValue}&page=1per_page=12`;
+        const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=1per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
         e.target.reset();        /*clears out the search bar after searching the input*/
+    }
+
+    async getMoreSearchedImages(index){
+        const searchValue = this.searchForm.querySelector('input').value;
+        const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=${index}per_page=12`;
+        const data = await this.fetchImages(baseURL);
+        this.GenerateHTML(data.photos)
     }
 
     loadMoreImages(e){        /*this increases the number of pages (index)*/
@@ -79,6 +86,7 @@ class PhotoGallery{
             }
         else{
             /*Load page 2 for search*/
+            this.getMoreSearchedImages(index);
             }
         }
 }
