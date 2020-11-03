@@ -52,6 +52,7 @@ section{
     font-size: 40px;
     font-weight: 900;
     letter-spacing: -2px;
+    cursor: pointer;
 }
 
 form{

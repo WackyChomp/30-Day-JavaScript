@@ -8,6 +8,7 @@ class PhotoGallery{
         this.loadMore = document.querySelector('.load-more');
         this.pageIndex = 1;
         this.searchValueGlobal = '';
+        this.logo = document.querySelector('.logo');
         this.eventHandle();
     }
 
@@ -17,11 +18,18 @@ class PhotoGallery{
         });
 
         this.searchForm.addEventListener('submit' , (e)=>{          /*(e) is the event */
+            this.pageIndex = 1;          /*Reset the page back to 1 after search */
             this.getSearchedImages(e);
         })
 
         this.loadMore.addEventListener('click' , (e)=>{
             this.loadMoreImages(e);
+        })
+
+        this.logo.addEventListener('click', ()=>{
+            this.pageIndex = 1;
+            this.galleryDiv.innerHTML = '';
+            this.getImg(this.pageIndex);
         })
     }
 
@@ -75,7 +83,7 @@ class PhotoGallery{
     async getMoreSearchedImages(index){
         //console.log(searchValue)
         //console.log(data)
-        const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=${index}per_page=12`;
+        const baseURL = `https://api.pexels.com/v1/search?query=${this.searchValueGlobal}&page=${index}per_page=12`;
         const data = await this.fetchImages(baseURL);
         this.GenerateHTML(data.photos)
     }
