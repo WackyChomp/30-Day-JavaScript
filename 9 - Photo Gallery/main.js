@@ -20,7 +20,7 @@ class PhotoGallery{
         })
 
         this.loadMore.addEventListener('click' , (e)=>{
-            this.loadMore(e);
+            this.loadMoreImages(e);
         })
     }
 
@@ -70,9 +70,18 @@ class PhotoGallery{
         e.target.reset();        /*clears out the search bar after searching the input*/
     }
 
-    loadMore(e){        /*this increases the number of pages (index)*/
+    loadMoreImages(e){        /*this increases the number of pages (index)*/
         let index = ++this.pageIndex;
-    }
+        const loadMoreData = e.target.getAttribute('data-img');
+        if(loadMoreData == 'curated'){
+            /*Load page 2 for curated*/
+            this.getImg(index)
+            }
+        else{
+            /*Load page 2 for search*/
+            }
+        }
 }
+
 
 const gallery = new PhotoGallery;    /*initalize and call this class */
