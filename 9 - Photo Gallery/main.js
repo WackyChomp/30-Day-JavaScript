@@ -25,6 +25,7 @@ class PhotoGallery{
     }
 
     async getImg(index){
+        this.loadMore.setAttribute('data-img', 'curated')     /*refreshing the page removes search*/
         const baseURL = `https://api.pexels.com/v1/curated?page=${index}&per_page=12`;      /*uses backtick*/   /*change how many appears in one page*/
         const data = await this.fetchImages(baseURL)
         this.GenerateHTML(data.photos)
@@ -59,6 +60,7 @@ class PhotoGallery{
     }
 
     async getSearchedImages(e){
+        this.loadMore.setAttribute('data-img', 'search');
         e.preventDefault();          /*prevent reloading after searching*/
         this.galleryDiv.innerHTML = '';     /*clears out images on page and replace with searched images */
         const searchValue = e.target.querySelector('input').value;
