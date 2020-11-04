@@ -51,4 +51,10 @@ nav{
     width: 60px;
     border-radius: 50%;
     background-color: rgb(23, 233, 23);
+    background-image: url(https://image.flaticon.com/icons/svg/545/545705.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    cursor: pointer;
+    box-shadow: -7px 9px 17px 0px #00000017;
 }
