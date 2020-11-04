@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 
 *{
     padding: 0;
@@ -12,4 +13,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Roboto";
+    font-size: 20px;
+}
+
+ul{
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -7px 9px 17px 0px #00000017;
+}
+
+li a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+li:hover a{
+    color: crimson;
 }
