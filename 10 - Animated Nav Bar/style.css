@@ -37,3 +37,18 @@ li a{
 li:hover a{
     color: crimson;
 }
+
+nav{
+    position: relative;      /*removes unnecessary space and horizontal scroll bar*/
+}
+
+.icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);         /*lines up to the center*/
+    right: -80px;         /*moves to the circle icon to the right*/
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(23, 233, 23);
+}
