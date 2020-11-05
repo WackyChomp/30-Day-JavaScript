@@ -81,7 +81,6 @@ nav.show ul{          /*shows the navbar*/
     transform: translate(0px);
     opacity: 1;
     pointer-events: all;
-
 }
 
 nav{              /*positions the navbar into the top right corner*/
@@ -89,3 +88,35 @@ nav{              /*positions the navbar into the top right corner*/
     top: 50px;
     right: 150px;
 }
+
+/*Media Query*/
+@media only screen and (max-width: 760px){
+    body{
+        font-size: 14px;
+    }
+
+    li a{
+        padding: 5px 10px;
+    }
+
+    nav ul{
+        padding: 15px;
+    }
+
+    nav.show ul{        /*reduce excess space of the navbar*/
+        width: 260px;
+    }
+
+    .icon{          /*reposition the navbar*/
+        width: 45px;
+        height: 45px;
+        right: -50px;
+    }
+
+    nav{
+        top: 10px;
+        right: 60px;
+    }
+
+}
+/*End Media Query*/
