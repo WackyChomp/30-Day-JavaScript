@@ -57,4 +57,35 @@ nav{
     background-size: 50%;
     cursor: pointer;
     box-shadow: -7px 9px 17px 0px #00000017;
+    transition: .5s ease transform;
+}
+
+.icon.close{            /*animation for hiding the navbar*/
+    transform: translateY(-50%) rotate(360deg);
+    background-image: url(https://image.flaticon.com/icons/svg/748/748122.svg);
+
+}
+
+ul{        /*collapse the navbar*/
+    width: 0px;
+    overflow: hidden;
+    transform: translateX(50px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s ease;
+    padding: 20px;
+}
+
+nav.show ul{          /*shows the navbar*/
+    width: 450px;
+    transform: translate(0px);
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+nav{              /*positions the navbar into the top right corner*/
+    position: absolute;
+    top: 50px;
+    right: 150px;
 }
