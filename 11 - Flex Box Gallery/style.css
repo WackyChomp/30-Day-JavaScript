@@ -31,8 +31,25 @@ section{          /*makes all images within the section the same size*/
     flex: 1;
     cursor: pointer;
     transition: .3s ease flex;
+    position: relative;
+    overflow: hidden;          /*hides horizontal scroll bar*/
 }
 
 .item.show{
     flex: 0;        /*image reverts back to original img size. Shows more width*/
+}
+
+.caption{          /*captions confined to selected item/image*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.472);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 8px;
+    opacity: 0;           /*caption remains hidden when image is not selected*/
+}
+
+.item.show .caption{
+    opacity: 1;
 }
