@@ -30,4 +30,9 @@ section{          /*makes all images within the section the same size*/
     width: 100%;
     flex: 1;
     cursor: pointer;
+    transition: .3s ease flex;
+}
+
+.item.show{
+    flex: 0;        /*image reverts back to original img size. Shows more width*/
 }

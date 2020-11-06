@@ -9,6 +9,18 @@
 <body>
     <section>
         <div class="item"><img src="URL IMAGE GOES HERE" alt=""></div>
+        <div class="item"><img src="URL IMAGE GOES HERE" alt=""></div>
+        <div class="item"><img src="URL IMAGE GOES HERE" alt=""></div>
+        <div class="item"><img src="URL IMAGE GOES HERE" alt=""></div>
     </section>
+    <script>
+        const items = document.querySelector('.item');
+        items.forEach(item =>{
+            item.addEventListener('click', ()=>{
+                items.forEach(item => item.classList.remove('show'))        /*Clicking the item/image removes previous item*/
+                item.classList.add('show')
+            })
+        })
+    </script>
 </body>
 </html>
