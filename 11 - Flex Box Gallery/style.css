@@ -11,3 +11,23 @@ body{
     font-family: "Roboto";
 }
 
+img{            /*makes all images the same size*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section{          /*makes all images within the section the same size*/
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item{        /*the images are stretched vertically*/
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    cursor: pointer;
+}
