@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 10px;
+    font-family: "Roboto";
+}
+
+img{            /*makes all images the same size*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section{          /*makes all images within the section the same size*/
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item{        /*the images are stretched vertically*/
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    cursor: pointer;
+    transition: .3s ease flex;
+    position: relative;
+    overflow: hidden;          /*hides horizontal scroll bar*/
+}
+
+.item.show{
+    flex: 4;        /*image reverts back to original img size. Shows more width*/
+}
+
+.caption{          /*captions confined to selected item/image*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.472);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 8px;
+    opacity: 0;           /*caption remains hidden when image is not selected*/
+}
+
+.item.show .caption{
+    opacity: 1;
+}
+
+/*Media Query*/
+@media only screen and (max-width: 768px){
+    section{
+        flex-direction: column;
+    }
+}
+/*End Media Query*/

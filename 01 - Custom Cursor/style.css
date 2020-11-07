@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: none;     /*hides default mouse cursor*/
+}
+
+body{
+    overflow-x: hidden;        /*removes the horizontal scroll bar*/
+}
+
+section{
+    min-height: 100vh;
+    background-color: rgb(41, 42, 46);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.cursor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid white;     /*comment this line out to remove circle border*/
+    width: 20px;            /*change size with width and height*/
+    height: 20px;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);    /*tip of mouse is inside cursor*/
+    pointer-events: none;      /*ability to highlight individually*/
+}
+
+.cursor::after , .cursor::before{
+    content: '';
+    position: absolute;
+    width: 5px;            /*manipulate the size of cursor with width and height*/
+    height: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50px;
+}
+
+.cursor::before{         /*color inside the cursor*/
+    background-color: blue;
+    /*transform: translate(-50%, -50%) scale(3);    makes color persist if uncommented */
+}
+
+.cursor.click::before{
+    animation: click 1s ease-in-out forwards;
+}
+
+@keyframes click{
+    0%{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}

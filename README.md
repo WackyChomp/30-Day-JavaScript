@@ -1,1 +1,1 @@
-# 30-Day-JavaScript
+# 30 JavaScript Programs
