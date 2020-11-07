@@ -36,7 +36,7 @@ section{          /*makes all images within the section the same size*/
 }
 
 .item.show{
-    flex: 0;        /*image reverts back to original img size. Shows more width*/
+    flex: 4;        /*image reverts back to original img size. Shows more width*/
 }
 
 .caption{          /*captions confined to selected item/image*/
