@@ -55,7 +55,7 @@
         </div>
     </section>
     <script>
-        const items = document.querySelector('.item');
+        const items = document.querySelectorAll('.item');
         items.forEach(item =>{
             item.addEventListener('click', ()=>{
                 items.forEach(item => item.classList.remove('show'))        /*Clicking the item/image removes previous item*/
