@@ -1,1 +1,1 @@
-# 30 JavaScript Programs
+# JavaScript Projects
