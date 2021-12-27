@@ -19,7 +19,7 @@ const trashFormatter = new Intl.NumberFormat("en-us", {
     maximumFractionDigits: 0,
     useGrouping: false
 })
-console.log(trashFormatter.format(722))
+// console.log(trashFormatter.format(7413282))
 
 
 const DONATION_TARGET = 30000000
@@ -45,5 +45,35 @@ async function setupDebris(){
     const remainingDonation = Math.max(DONATION_TARGET - amountCollected, 0)     /* ensure no negative numbers past 0 */
 
     
+    /* Assign placeholder value to garbage/icon */
+    const stringConversion = trashFormatter.format(amountCollected)
+    const garbageAmount = {
+        millions: {
+            amount: parseInt(`${stringConversion[0]} ${stringConversion[1]}`),
+            icon: "videogame_asset",
+        },
+        hundredThousands: {
+            amount: parseInt(stringConversion[2]),
+            icon: "directions_run",
+        },
+        thousands: {
+            amount: parseInt(stringConversion[3]),
+            icon: "directions_bike",
+        },
+        hundreds: {
+            amount: parseInt(stringConversion[4]),
+            icon: "surfing",
+        },
+        tens: {
+            amount: parseInt(stringConversion[5]),
+            icon: "phone_iphone",
+        },
+        ones: {
+            amount: parseInt(stringConversion[6]),
+            icon: "flatware",
+        },
+
+    }
+    console.log(remainingDonation, garbageAmount)
 }
 
