@@ -3,7 +3,7 @@
 /* Variables */
 
 /* Reference classes from html */
-const trashContainer = document.querySelector('.debris-container')
+const debrisContainer = document.querySelector('.debris-container')
 const donationElement = document.querySelector('.donation')
 
 /* Display currency */
@@ -14,12 +14,12 @@ const currencyFormatter = new Intl.NumberFormat("en-us", {
 })
 
 /* Pad numbers with 0 to avoid whitespace  */
-const trashFormatter = new Intl.NumberFormat("en-us", {
+const debrisFormatter = new Intl.NumberFormat("en-us", {
     minimumIntegerDigits: 8,
     maximumFractionDigits: 0,
     useGrouping: false
 })
-// console.log(trashFormatter.format(7413282))
+// console.log(debrisFormatter.format(7413282))
 
 
 const DONATION_TARGET = 30000000
@@ -45,35 +45,41 @@ async function setupDebris(){
     const remainingDonation = Math.max(DONATION_TARGET - amountCollected, 0)     /* ensure no negative numbers past 0 */
 
     
-    /* Assign placeholder value to garbage/icon */
-    const stringConversion = trashFormatter.format(amountCollected)
-    const garbageAmount = {
-        millions: {
+    /* Assign placeholder value to debris/icon */
+    const stringConversion = debrisFormatter.format(amountCollected)
+    const debrisAmount = {
+        xxl: {
             amount: parseInt(`${stringConversion[0]} ${stringConversion[1]}`),
-            icon: "videogame_asset",
-        },
-        hundredThousands: {
-            amount: parseInt(stringConversion[2]),
             icon: "directions_run",
         },
-        thousands: {
+        xl: {
+            amount: parseInt(stringConversion[2]),
+            icon: "accessible",
+        },
+        lg: {
             amount: parseInt(stringConversion[3]),
-            icon: "directions_bike",
+            icon: "build",
         },
-        hundreds: {
+        md: {
             amount: parseInt(stringConversion[4]),
-            icon: "surfing",
+            icon: "bug_report",
         },
-        tens: {
+        sm: {
             amount: parseInt(stringConversion[5]),
-            icon: "phone_iphone",
+            icon: "shopping_cart",
         },
-        ones: {
+        xs: {
             amount: parseInt(stringConversion[6]),
-            icon: "flatware",
+            icon: "rocket_launch",
         },
 
     }
-    console.log(remainingDonation, garbageAmount)
+    //console.log(remainingDonation, debrisAmount)
+
+    Object.values(debrisAmount).forEach(({ amount, icon}) => {
+        for (let i = 0; i < amount; i++) {
+            createDebris(icon)
+        }
+    })
 }
 
