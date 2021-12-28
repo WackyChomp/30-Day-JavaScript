@@ -83,3 +83,18 @@ async function setupDebris(){
     })
 }
 
+function createDebris(icon){
+    const img = document.createElement('img')
+    const top = randomNumberBetween(0, 50)
+    const size = top / 5 + 1
+    img.src = `/imgs/${icon}.svg`
+    img.style.top = `${top}vh`
+    img.style.width = `${size}vmin`
+    img.style.height = `${size}vmin`
+    img.style.left = `${randomNumberBetween(0, 100)}vw`
+    debrisContainer.appendChild(img)
+}
+
+function randomNumberBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
